@@ -12,7 +12,7 @@ pipeline {
          }      
          stage('Upload to AWS') {
               steps {
-                  withAWS(region:'us-west-2',credentials:'AKIAVOWOA7K2CONA25S3') {
+                  withAWS(region:'eu-centra-1',credentials:'AKIAVOWOA7K2CONA25S3') {
                   sh 'echo "Uploading content with AWS creds"'
                       s3Upload(pathStyleAccessEnabled: true, payloadSigningEnabled: true, file:'app.py', bucket:'my-storage-test-1')
                   }
